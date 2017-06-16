@@ -15,9 +15,41 @@ namespace SocialMedia
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "",
+                defaults: new { controller = "Account", action = "Index"}
             );
+
+            routes.MapRoute(
+                name: "Login",
+                url: "Account/Login",
+                defaults: new { controller = "Account", action = "Login" }
+            );
+
+            routes.MapRoute(
+                name: "CreateAccount",
+                url: "Account/CreateAccount",
+                defaults: new { controller = "Account", action = "CreateAccount" }
+            );
+
+            routes.MapRoute(
+                name: "Dashboard",
+                url: "{username}",
+                defaults: new { controller = "Account", action = "Dashboard" }
+            );
+
+            routes.MapRoute(
+               name: "SearchUsers",
+               url: "Account/SearchUsers",
+               defaults: new { controller = "Account", action = "SearchUsers" }
+           );
+
+            routes.MapRoute(
+                name: "Logout",
+                url: "Account/Logout",
+                defaults: new { controller = "Account", action = "Logout" }
+            );
+
+
         }
     }
 }
